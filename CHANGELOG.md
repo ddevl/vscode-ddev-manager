@@ -2,6 +2,12 @@
 
 All notable changes to the "ddev-manager" extension will be documented in this file.
 
+## [3.3.0] - 2026-02-24
+
+- New: Added Codeigniter project type
+- Improved: Full project installation reworked
+- Fixed: Project delete now checks if the project has a database otherwise uses "--omit-snapshot" to avoid errors
+
 ## [3.2.0] - 2026-02-02
 
 - New: New setting to skip configuration in subfolder (#33)[[#33](https://github.com/ddev/vscode-ddev-manager/issues/33)]
