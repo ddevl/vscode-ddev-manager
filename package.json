@@ -722,6 +722,12 @@
       {
         "title": "DDEV Manager",
         "properties": {
+          "ddevManager.ddevBinaryPath": {
+            "order": 1,
+            "type": "string",
+            "default": "",
+            "description": "Custom path to the DDEV binary. If empty, 'ddev' is resolved from PATH."
+          },
           "ddevManager.progressNotificationsDisplay": {
             "order": 4,
             "type": "string",
