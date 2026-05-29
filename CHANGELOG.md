@@ -2,6 +2,19 @@
 
 All notable changes to the "ddev-manager" extension will be documented in this file.
 
+## [3.3.3] - 2026-05-26
+
+- Fixed: snapshots restore/delete not showing picker
+
+## [3.3.2] - 2026-05-14
+
+- Improved: Share for WordPress
+- Fixed: add-ons installer not showing list correctly
+
+## [3.3.1] - 2026-03-05
+
+- Fixed: ngrok share. ngrok changed the command output so a change was required to get the correct URL.
+
 ## [3.3.0] - 2026-02-24
 
 - New: Added Codeigniter project type
