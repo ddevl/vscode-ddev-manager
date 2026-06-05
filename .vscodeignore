@@ -11,3 +11,11 @@ vsc-extension-quickstart.md
 **/.eslintrc.json
 **/*.map
 **/*.ts
+.github/**
+.claude/**
+CLAUDE.md
+.agents/**
+.fallow/**
+.fallowrc.json
+skills-lock.json
+biome.json
