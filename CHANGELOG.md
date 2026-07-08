@@ -2,6 +2,23 @@
 
 All notable changes to the "ddev-manager" extension will be documented in this file.
 
+## [3.4.0] - 2026-07-08
+
+- New: New option to define DDEV location if not in PATH
+- New: Extension tests (work in progress)
+- New: The Updater can now install updates automatically on macOS. Homebrew and manual installation supported, other platforms in progress.
+- New: Added project type: WordPress Bedrock
+- New: Added project type: Asterios
+- New: Added project type: Joomla
+- New: Tests for all project types installation
+- Improved: Code cleanup, removed unused files from early stages of development
+- Improved: Sharing now can process multiple shares from the same workspace
+- Improved: Use same notification wit loader when a project is restarted after changing project config.yml
+- Improved: Sidebar state sync
+- Removed: Sequel Pro option as it was removed from DDEV
+- Removed: Removed development files from final extension package
+- Fixed: Manual updates check loader not removed after finding update.
+
 ## [3.3.3] - 2026-05-26
 
 - Fixed: snapshots restore/delete not showing picker
