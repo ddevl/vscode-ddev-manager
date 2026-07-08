@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
+  "entry": [
+    "src/extension.ts"
+  ],
+  "duplicates": {
+    "minOccurrences": 3,
+    "ignore": [
+      "src/test/**",
+      "src/projects/**"
+    ]
+  },
+  "ignorePatterns": [
+    "src/test/**"
+  ],
+  "ignoreDependencies": [
+    "@vscode/test-electron",
+    "enhanced-resolve",
+    "glob",
+    "webpack-node-externals",
+    "webpack-shell-plugin-next",
+    "node-pty"
+  ],
+  "rules": {
+    "unused-class-members": "off"
+  }
+}
