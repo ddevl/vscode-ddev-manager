@@ -2,7 +2,7 @@
   "name": "ddev-manager",
   "displayName": "DDEV Manager",
   "description": "DDEV Manager offers a centralized and user-friendly interface to control every aspect of your DDEV projects.",
-  "version": "3.3.3",
+  "version": "3.4.0",
   "publisher": "biati",
   "author": {
     "name": "Biati Digital",
@@ -25,6 +25,7 @@
     "deploy"
   ],
   "activationEvents": [
+    "workspaceContains:**/.ddev/config.yaml",
     "onLanguage",
     "onCommand:workbench.action.tasks.runTask"
   ],
@@ -517,27 +518,27 @@
         },
         {
           "command": "biatiddev.launchInBrowser",
-          "when": "view == biatiddev && viewItem == ddev_active",
+          "when": "view == biatiddev && viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "inline@1"
         },
         {
           "command": "biatiddev.sshTerminal",
-          "when": "view == biatiddev && viewItem == ddev_active",
+          "when": "view == biatiddev && viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "inline@2"
         },
         {
           "command": "biatiddev.restart",
-          "when": "view == biatiddev && viewItem == ddev_active",
+          "when": "view == biatiddev && viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "inline@3"
         },
         {
           "command": "biatiddev.stop",
-          "when": "view == biatiddev && viewItem == ddev_active",
+          "when": "view == biatiddev && viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "inline@4"
         },
         {
           "submenu": "project_submenu",
-          "when": "view == biatiddev && (viewItem == ddev_active || viewItem == ddev_inactive)",
+          "when": "view == biatiddev && (viewItem =~ /^ddev_active(_sharing)?$/ || viewItem == ddev_inactive)",
           "group": "inline@5"
         },
         {
@@ -579,57 +580,57 @@
         },
         {
           "command": "biatiddev.stop",
-          "when": "viewItem == ddev_active",
+          "when": "viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "biatiddev_ga@1"
         },
         {
           "command": "biatiddev.stopOthers",
-          "when": "viewItem == ddev_active",
+          "when": "viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "biatiddev_ga@2"
         },
         {
           "command": "biatiddev.restart",
-          "when": "viewItem == ddev_active",
+          "when": "viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "biatiddev_ga@3"
         },
         {
           "command": "biatiddev.createSnapshot",
-          "when": "viewItem == ddev_active",
+          "when": "viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "biatiddev_gb@1"
         },
         {
           "command": "biatiddev.deleteSnapshot",
-          "when": "viewItem == ddev_active",
+          "when": "viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "biatiddev_gb@1"
         },
         {
           "command": "biatiddev.restoreSnapshot",
-          "when": "viewItem == ddev_active",
+          "when": "viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "biatiddev_gb@2"
         },
         {
           "command": "biatiddev.clearSnapshots",
-          "when": "viewItem == ddev_active",
+          "when": "viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "biatiddev_gb@3"
         },
         {
           "command": "biatiddev.importDatabase",
-          "when": "viewItem == ddev_active",
+          "when": "viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "biatiddev_gb@4"
         },
         {
           "command": "biatiddev.exportDatabase",
-          "when": "viewItem == ddev_active",
+          "when": "viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "biatiddev_gb@5"
         },
         {
           "command": "biatiddev.addService",
-          "when": "viewItem == ddev_active",
+          "when": "viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "biatiddev_gc@1"
         },
         {
           "command": "biatiddev.deleteService",
-          "when": "viewItem == ddev_active",
+          "when": "viewItem =~ /^ddev_active(_sharing)?$/",
           "group": "biatiddev_gc@2"
         },
         {
@@ -644,12 +645,12 @@
         },
         {
           "command": "biatiddev.share",
-          "when": "viewItem == ddev_active && !ddev:sharing",
+          "when": "viewItem == ddev_active",
           "group": "biatiddev_ge@6"
         },
         {
           "command": "biatiddev.shareStop",
-          "when": "viewItem == ddev_active && ddev:sharing",
+          "when": "viewItem == ddev_active_sharing",
           "group": "biatiddev_ge@6"
         },
         {
@@ -863,7 +864,6 @@
               "TablePlus",
               "Sequel Ace",
               "Querious",
-              "Sequel Pro",
               "DBeaver",
               "HeidiSQL",
               "phpMyAdmin",
@@ -877,7 +877,6 @@
               "Requires TablePlus app. Available for Mac and Windows",
               "Requires Sequel Ace app. Available for Mac Only",
               "Requires Querious app. Available for Mac Only",
-              "Requires Sequel Pro. Available for Mac Only",
               "Requires DBeaver. Available for Windows, Mac and Linux",
               "Requires HeidiSQL. Available for Windows and Linux",
               "Requires phpMyAdmin service. If the service is still not installed the extension will give you the option to install it",
@@ -1068,6 +1067,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "enhanced-resolve": "5.18.3",
     "eslint": "^8.57.1",
+    "fallow": "2.86.0",
     "glob": "^10.4.5",
     "mocha": "^10.8.2",
     "patch-package": "^8.0.0",
