@@ -2,6 +2,11 @@
 
 All notable changes to the "ddev-manager" extension will be documented in this file.
 
+## [3.4.1] - 2026-07-19
+
+- Fixed: The latest VS Code build resolves node-pty different and caused SSH access from terminals to stop working
+- Fixed: WordPress check WP_DEBUG status on editor not working correctly since the wp-config-ddev.php was updated
+
 ## [3.4.0] - 2026-07-08
 
 - New: New option to define DDEV location if not in PATH
