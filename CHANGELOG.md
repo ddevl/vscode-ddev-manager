@@ -2,6 +2,10 @@
 
 All notable changes to the "ddev-manager" extension will be documented in this file.
 
+## [3.4.2] - 2026-07-22
+
+- Fixed: Kill processes when docker does not respond
+
 ## [3.4.1] - 2026-07-19
 
 - Fixed: The latest VS Code build resolves node-pty different and caused SSH access from terminals to stop working
